@@ -14,3 +14,26 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('users/login', [
+    'as' => 'login',
+    'uses' => 'Auth\LoginController@showLoginForm'
+]);
+/*Route::get('vendors/login', [
+    'as' => 'login',
+    'uses' => 'Auth\LoginController@showVendorLoginForm'
+]);*/
+
+Route::get('/products', 'ProductsController@index');
+
+Route::group(array('prefix' => 'vendor','namespace' => 'Vendor' , 'middleware' => 'vendor')
+    ,
+    function () {
+        Route::get('/','VendorsController@home');
+
+        Route::get('/login', "VendorsController@showLoginForm");
+
+        Route::get('/logout',"VendorsController@logout");
+    });
