@@ -1,0 +1,20 @@
+{
+  "name": "trumsan",
+  "description": "",
+  "main": "",
+  "authors": [
+    "namnt <namnt@magenest.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/namchinhh/sport-1",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "template_delux_hotel": "*"
+  }
+}

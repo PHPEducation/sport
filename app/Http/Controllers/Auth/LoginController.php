@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class LoginController extends Controller
 {
@@ -35,5 +38,19 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+    public function showVendorLoginForm(){
+        return view('auth.vendorLogin');
+    }
+
+    public function register(){
+        return view('auth.vendorRegister');
+    }
+    public function login(Request $request){
+        if(Auth::check()){
+            dd('authcheck');
+        }
+        dd('not');
+        return view('home');
     }
 }
