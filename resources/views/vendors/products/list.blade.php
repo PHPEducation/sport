@@ -1,4 +1,5 @@
 @extends('vendors.shared.master')
+<<<<<<< HEAD
 
 @section('content')
     <div class="clearfix"></div>
